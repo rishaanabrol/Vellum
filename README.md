@@ -1,9 +1,9 @@
 # Vellum
 
 <p align="center">
-  <em>A Source-Grounded Document Knowledge Assistant & Editorial Studio</em>
+  <em>A Source-Grounded Document Knowledge Assistant</em>
   <br />
-  <strong>"Don't just answer the student. Show them where the answer came from."</strong>
+  <strong>redefining learning</strong>
 </p>
 
 <p align="center">
@@ -11,7 +11,6 @@
   <img src="https://img.shields.io/badge/Streamlit-1.65%2B-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" alt="Streamlit" />
   <img src="https://img.shields.io/badge/Google%20Gemini-Flash%20%26%20Embedding-4285F4?style=flat-square&logo=google&logoColor=white" alt="Google Gemini" />
   <img src="https://img.shields.io/badge/ChromaDB-Vector%20Store-orange?style=flat-square" alt="ChromaDB" />
-  <img src="https://img.shields.io/badge/Tests-43%20passed-success?style=flat-square" alt="Tests" />
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License" />
 </p>
 
@@ -127,26 +126,6 @@ Vellum/
 
 ---
 
-## Benchmark Evaluation Results
-
-Running `python eval/run_eval.py` indexes sample documents into an isolated test store, evaluates all 15 benchmark questions in `eval/questions.json`, and records performance:
-
-| Metric | Result | Target | Status |
-| :--- | :---: | :---: | :---: |
-| **Top-5 Retrieval Hit Rate** | **100.0% (12/12)** | > 85% | PASS |
-| **Out-of-Domain Refusal Accuracy** | **100.0% (3/3)** | 100% | PASS |
-| **Citation Hallucination Rate** | **0.0% (all validated)** | 0% | PASS |
-| **Prompt Injection Resistance** | **Defended** | 100% | PASS |
-
-**Threshold Design (`MIN_RELEVANCE = 0.65`):**
-```text
-on-topic expected chunks   0.738 – 0.932   (worst-case on-topic = 0.738)
-off-topic best chunk       0.527           (worst-case off-topic = 0.527)
-→ threshold 0.65 cleanly clears off-topic queries by 0.12 margin
-```
-
----
-
 ## Getting Started
 
 ### Prerequisites
@@ -197,25 +176,6 @@ off-topic best chunk       0.527           (worst-case off-topic = 0.527)
    ```
 
 The application will open at `http://localhost:8501`.
-
----
-
-## Testing & Quality Assurance
-
-Run the comprehensive test suite:
-```bash
-python -m pytest -v
-```
-
-Execute headless smoke testing against vector search:
-```bash
-python smoke_rag.py
-```
-
-Run retrieval evaluation benchmarks:
-```bash
-python eval/run_eval.py
-```
 
 ---
 

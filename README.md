@@ -3,7 +3,7 @@
 <p align="center">
   <em>A Source-Grounded Document Knowledge Assistant</em>
   <br />
-  <strong>redefining learning</strong>
+  <strong>Redefining Learning</strong>
 </p>
 
 <p align="center">

@@ -1,0 +1,107 @@
+﻿[
+  {
+    "id": "q01",
+    "question": "What is Gauss's divergence theorem?",
+    "expected_doc": "Physics_Module_1.pdf",
+    "expected_page": 1,
+    "is_off_topic": false
+  },
+  {
+    "id": "q02",
+    "question": "How is electric flux defined through a differential area element?",
+    "expected_doc": "Physics_Module_1.pdf",
+    "expected_page": 1,
+    "is_off_topic": false
+  },
+  {
+    "id": "q03",
+    "question": "What is the differential form of Gauss's Law in electrostatics?",
+    "expected_doc": "Physics_Module_1.pdf",
+    "expected_page": 2,
+    "is_off_topic": false
+  },
+  {
+    "id": "q04",
+    "question": "What does the volume charge density rho represent in Gauss's law?",
+    "expected_doc": "Physics_Module_1.pdf",
+    "expected_page": 2,
+    "is_off_topic": false
+  },
+  {
+    "id": "q05",
+    "question": "What mathematical relationship does Stokes' theorem state?",
+    "expected_doc": "Physics_Module_2.pdf",
+    "expected_page": 1,
+    "is_off_topic": false
+  },
+  {
+    "id": "q06",
+    "question": "How does curl measure the infinitesimal rotation of a vector field?",
+    "expected_doc": "Physics_Module_2.pdf",
+    "expected_page": 1,
+    "is_off_topic": false
+  },
+  {
+    "id": "q07",
+    "question": "What was Maxwell's correction to Ampere's circuital law?",
+    "expected_doc": "Physics_Module_2.pdf",
+    "expected_page": 2,
+    "is_off_topic": false
+  },
+  {
+    "id": "q08",
+    "question": "What is the displacement current term added by Maxwell?",
+    "expected_doc": "Physics_Module_2.pdf",
+    "expected_page": 2,
+    "is_off_topic": false
+  },
+  {
+    "id": "q09",
+    "question": "What protective gear must students wear in the physics lab?",
+    "expected_doc": "Lab_Safety_Protocol.txt",
+    "expected_page": 1,
+    "is_off_topic": false
+  },
+  {
+    "id": "q10",
+    "question": "How does Gauss's divergence theorem relate surface and volume integrals?",
+    "expected_doc": "Physics_Module_1.pdf",
+    "expected_page": 1,
+    "is_off_topic": false
+  },
+  {
+    "id": "q11",
+    "question": "Explain the relationship between curl and line integrals around a closed boundary.",
+    "expected_doc": "Physics_Module_2.pdf",
+    "expected_page": 1,
+    "is_off_topic": false
+  },
+  {
+    "id": "q12",
+    "question": "What happens before reconfiguring high voltage circuits in the lab?",
+    "expected_doc": "Lab_Safety_Protocol.txt",
+    "expected_page": 1,
+    "is_off_topic": false
+  },
+  {
+    "id": "q13",
+    "question": "What is the capital of Australia and its prime minister?",
+    "expected_doc": null,
+    "expected_page": null,
+    "is_off_topic": true
+  },
+  {
+    "id": "q14",
+    "question": "How do you cook authentic Italian lasagna with béchamel sauce?",
+    "expected_doc": null,
+    "expected_page": null,
+    "is_off_topic": true
+  },
+  {
+    "id": "q15",
+    "question": "What is the history of European railway locomotive engines in the 19th century?",
+    "expected_doc": null,
+    "expected_page": null,
+    "is_off_topic": true
+  }
+]

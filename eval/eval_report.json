@@ -1,0 +1,9 @@
+{
+  "on_topic_total": 12,
+  "on_topic_hits": 12,
+  "hit_rate_pct": 100.0,
+  "off_topic_total": 3,
+  "off_topic_refusals": 3,
+  "refusal_accuracy_pct": 100.0,
+  "min_relevance_threshold": 0.65
+}

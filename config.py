@@ -52,7 +52,7 @@ class Settings:
 
     @property
     def LLM_MODEL(self) -> str:
-        return _get_conf("LLM_MODEL", "gemini-3.8-flash")
+        return _get_conf("LLM_MODEL", "gemini-3.5-flash-lite")
 
     @property
     def EMBEDDING_MODEL(self) -> str:
@@ -76,7 +76,7 @@ class Settings:
 
     @property
     def MIN_RELEVANCE(self) -> float:
-        return float(_get_conf("MIN_RELEVANCE", "0.45"))
+        return float(_get_conf("MIN_RELEVANCE", "0.65"))
 
     @property
     def CHROMA_PERSIST_DIR(self) -> str:

@@ -66,6 +66,11 @@ class RAGPipeline:
         # 2. Semantic retrieval
         status("Finding relevant passages")
         sources = self.retriever.retrieve(search_query, document_ids=document_ids)
+        if not sources and rewritten_query and search_query != query:
+            # If the rewritten query yielded zero results, retry retrieval with the raw query
+            sources = self.retriever.retrieve(query, document_ids=document_ids)
+            if sources:
+                rewritten_query = None  # Revert to original query as it was the successful one
 
         # 3. Deterministic refusal: if no chunk passes threshold, skip LLM call
         if not sources:

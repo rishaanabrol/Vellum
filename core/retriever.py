@@ -12,12 +12,43 @@ class Retriever:
     and snippet key-sentence highlighting.
     """
 
-    def __init__(self, vector_store: VectorStore, embedding_service: EmbeddingService):
+    def __init__(
+        self,
+        vector_store: VectorStore,
+        embedding_service: EmbeddingService,
+        top_k: Optional[int] = None,
+        candidate_k: Optional[int] = None,
+        min_relevance: Optional[float] = None,
+    ):
         self.vector_store = vector_store
         self.embedding_service = embedding_service
-        self.top_k = settings.TOP_K
-        self.candidate_k = settings.CANDIDATE_K
-        self.min_relevance = settings.MIN_RELEVANCE
+        self._top_k = top_k
+        self._candidate_k = candidate_k
+        self._min_relevance = min_relevance
+
+    @property
+    def top_k(self) -> int:
+        return self._top_k if self._top_k is not None else settings.TOP_K
+
+    @top_k.setter
+    def top_k(self, val: int) -> None:
+        self._top_k = val
+
+    @property
+    def candidate_k(self) -> int:
+        return self._candidate_k if self._candidate_k is not None else settings.CANDIDATE_K
+
+    @candidate_k.setter
+    def candidate_k(self, val: int) -> None:
+        self._candidate_k = val
+
+    @property
+    def min_relevance(self) -> float:
+        return self._min_relevance if self._min_relevance is not None else settings.MIN_RELEVANCE
+
+    @min_relevance.setter
+    def min_relevance(self, val: float) -> None:
+        self._min_relevance = val
 
     def _extract_highlight(self, text: str, query: str) -> Optional[str]:
         """

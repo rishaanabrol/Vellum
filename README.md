@@ -105,6 +105,10 @@ Vellum/
 │   ├── eval_report.json        # Evaluation output
 │   ├── questions.json          # Benchmark evaluation questions
 │   └── run_eval.py             # Evaluation runner script
+├── scripts/                    # Utility & developer scripts
+│   ├── generate_specimens.py   # Generates typographic monograph specimens
+│   ├── preseed.py              # Pre-seed utility for demo documents
+│   └── smoke_rag.py            # Standalone smoke test utility
 ├── static/                     # Static assets & specimens
 │   └── specimens/              # Typographic specimens
 ├── tests/                      # Automated test suite (43 unit & integration tests)
@@ -113,10 +117,8 @@ Vellum/
 ├── app.py                      # Main Streamlit application entrypoint
 ├── config.py                   # Pydantic application settings
 ├── LICENSE                     # MIT License
-├── preseed.py                  # Pre-seed utility for demo documents
 ├── pytest.ini                  # Pytest configuration
-├── requirements.txt            # Pinned Python package dependencies
-└── smoke_rag.py                # Standalone smoke test utility
+└── requirements.txt            # Pinned Python package dependencies
 ```
 
 ---
@@ -162,7 +164,7 @@ Vellum/
 
 5. **(Optional) Pre-seed sample documents:**
    ```bash
-   python preseed.py
+   python scripts/preseed.py
    ```
 
 6. **Launch the application:**

@@ -4,6 +4,14 @@ Exercises: live retrieval over the seeded store, deterministic refusal below the
 threshold, follow-up query rewriting, and citation validation. Runs even when the
 LLM quota is exhausted (the pipeline must degrade, not crash).
 """
+import sys
+from pathlib import Path
+
+# Add project root to sys.path so core and config can be imported cleanly
+ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from core.embeddings import EmbeddingService
 from core.llm import LLMService
 from core.rag import RAGPipeline

@@ -1,8 +1,10 @@
 import pymupdf as fitz
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parent.parent
+
 def create_specimen_pdfs():
-    out_dir = Path("static/specimens")
+    out_dir = ROOT / "static/specimens"
     out_dir.mkdir(parents=True, exist_ok=True)
     
     specimens = [

@@ -116,16 +116,18 @@ else:
     components.html(_KATEX_IFRAME_HTML, height=1)
 
 @st.cache_resource
-def get_services():
-    emb_service = EmbeddingService()
+def get_services(api_key: str, model: str):
+    emb_service = EmbeddingService(api_key=api_key)
     v_store = VectorStore()
     retriever = Retriever(v_store, emb_service)
-    llm = LLMService()
+    llm = LLMService(api_key=api_key, model=model)
     rag = RAGPipeline(retriever, llm)
     return emb_service, v_store, retriever, llm, rag
 
 
-emb_service, vector_store, retriever, llm_service, rag_pipeline = get_services()
+emb_service, vector_store, retriever, llm_service, rag_pipeline = get_services(
+    settings.GEMINI_API_KEY, settings.LLM_MODEL
+)
 
 # The cover is the front door of the product: it shows until the reader
 # chooses to enter. Everything after it is the real workspace.

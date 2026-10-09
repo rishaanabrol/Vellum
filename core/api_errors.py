@@ -11,7 +11,7 @@ SERVICE_UNAVAILABLE_MESSAGE = (
     "The answering service is temporarily unavailable. Please try again in a moment."
 )
 MISSING_CONFIGURATION_MESSAGE = (
-    "The app is not fully configured. Add GEMINI_API_KEY and LLM_MODEL to your .env file, then restart."
+    "The app is not fully configured. Please add GEMINI_API_KEY in Streamlit Cloud Secrets (or local .env file), then refresh."
 )
 GENERIC_GENERATION_MESSAGE = (
     "Could not generate an answer right now. Please try again. Technical details were written to the log."

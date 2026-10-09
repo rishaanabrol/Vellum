@@ -19,8 +19,8 @@ def _get_conf(key: str, default: str = "") -> str:
 class Settings:
     # Google GenAI Settings
     GEMINI_API_KEY: str = _get_conf("GEMINI_API_KEY", "")
-    # Model ID from env or Streamlit secrets; defaults to gemini-2.5-flash if not specified
-    LLM_MODEL: str = _get_conf("LLM_MODEL", "gemini-2.5-flash")
+    # Model ID from env or Streamlit secrets; defaults to gemini-3.8-flash if not specified
+    LLM_MODEL: str = _get_conf("LLM_MODEL", "gemini-3.8-flash")
     EMBEDDING_MODEL: str = _get_conf("EMBEDDING_MODEL", "gemini-embedding-001")
 
     # Chunking Defaults

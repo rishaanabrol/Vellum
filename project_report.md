@@ -7,6 +7,7 @@
 - **Registration Number:** [Enter Your Registration Number Here]
 - **Email ID:** rishaan.abrol15@gmail.com
 - **Project Repository:** [https://github.com/rishaanabrol/Vellum](https://github.com/rishaanabrol/Vellum)
+- **Live Web Application:** [https://tryvellum.streamlit.app/](https://tryvellum.streamlit.app/)
 
 ---
 

@@ -7,11 +7,16 @@
 </p>
 
 <p align="center">
+  <a href="https://tryvellum.streamlit.app/"><img src="https://static.streamlit.io/badges/streamlit_badge_black_white.svg" alt="Streamlit App" /></a>
   <img src="https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python&logoColor=white" alt="Python 3.10+" />
   <img src="https://img.shields.io/badge/Streamlit-1.65%2B-FF4B4B?style=flat-square&logo=streamlit&logoColor=white" alt="Streamlit" />
   <img src="https://img.shields.io/badge/Google%20Gemini-Flash%20%26%20Embedding-4285F4?style=flat-square&logo=google&logoColor=white" alt="Google Gemini" />
   <img src="https://img.shields.io/badge/ChromaDB-Vector%20Store-orange?style=flat-square" alt="ChromaDB" />
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License" />
+</p>
+
+<p align="center">
+  <a href="https://tryvellum.streamlit.app/"><strong>🌐 Live Deployment: https://tryvellum.streamlit.app/</strong></a>
 </p>
 
 ---
@@ -123,10 +128,17 @@ Vellum/
 
 ---
 
+## 🌐 Live Application
+
+Vellum is deployed and accessible on Streamlit Community Cloud:
+👉 **[https://tryvellum.streamlit.app/](https://tryvellum.streamlit.app/)**
+
+---
+
 ## Getting Started
 
 ### Prerequisites
-- Python 3.10+ (tested on Python 3.14)
+- Python 3.10+ (tested on Python 3.12/3.14)
 - Google Gemini API key ([Google AI Studio](https://aistudio.google.com/))
 
 ### Installation
@@ -158,7 +170,7 @@ Vellum/
    Edit `.env` and set your `GEMINI_API_KEY`:
    ```env
    GEMINI_API_KEY=your_gemini_api_key_here
-   LLM_MODEL=gemini-2.5-flash
+   LLM_MODEL=gemini-3.5-flash-lite
    EMBEDDING_MODEL=gemini-embedding-001
    ```
 

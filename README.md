@@ -105,11 +105,6 @@ Vellum/
 │   ├── eval_report.json        # Evaluation output
 │   ├── questions.json          # Benchmark evaluation questions
 │   └── run_eval.py             # Evaluation runner script
-├── sample_documents/           # Sample physics & lab course material
-│   ├── generate_samples.py     # Script to generate mock PDF fixtures
-│   ├── Lab_Safety_Protocol.txt
-│   ├── Physics_Module_1.pdf
-│   └── Physics_Module_2.pdf
 ├── static/                     # Static assets & specimens
 │   └── specimens/              # Typographic specimens
 ├── tests/                      # Automated test suite (43 unit & integration tests)

@@ -6,51 +6,31 @@
 - **Name:** Rishaan Abrol
 - **Registration Number:** [Enter Your Registration Number Here]
 - **Email ID:** rishaan.abrol15@gmail.com
-- **Repository URL:** [https://github.com/rishaanabrol/Vellum](https://github.com/rishaanabrol/Vellum)
+- **Project Repository:** [https://github.com/rishaanabrol/Vellum](https://github.com/rishaanabrol/Vellum)
 
 ---
 
 ## 1. Problem Statement
 
-Modern students and researchers increasingly rely on Generative AI and Large Language Models (LLMs) to understand dense academic materials, course handouts, problem sets, and textbooks. However, standard LLM chat interfaces suffer from three critical shortcomings:
+Modern students and researchers increasingly rely on Generative AI and Large Language Models (LLMs) to synthesize dense academic materials, course handouts, problem sets, and textbooks. However, standard LLM chat interfaces suffer from three critical shortcomings in academic and technical environments:
 
-1. **Hallucination & Lack of Verifiability:** General-purpose AI models routinely produce plausible-sounding but factually inaccurate statements without providing verifiable page-level evidence or provenance citations.
+1. **Hallucination & Lack of Verifiability:** General-purpose AI models routinely produce plausible-sounding but factually inaccurate statements without providing verifiable page-level evidence, line citations, or mathematical derivations.
 2. **Context Loss & Prompt Injection Vulnerability:** General models fail to isolate untrusted user documents from core instructions, making them prone to syllabus confusion or adversarial document injection.
-3. **The Speculation Trap (Lack of Refusal Cutoff):** Standard chatbots almost never admit when an answer is absent from the provided course syllabus, opting instead to speculate from general pre-training data, leading students to memorize incorrect or off-syllabus information.
+3. **The Speculation Trap (Lack of Refusal Cutoff):** Standard chatbots almost never admit when an answer is absent from the provided course syllabus, opting instead to speculate from general pre-training data. This leads students to memorize incorrect or off-syllabus information.
 
 ---
 
 ## 2. Why This Problem Statement Was Chosen
 
-Education demands accountability: **"Don't just answer the student; show them exactly where the answer came from."**
+Education demands intellectual accountability: **"Don't just answer the student; show them exactly where the answer came from."**
 
-1. **Academic Rigor:** In university coursework (such as physics, mathematics, and engineering), trusting an ungrounded AI summary can lead to academic errors. Students need to verify the exact page, formula, or problem statement directly from their instructor's provided material.
-2. **Pedagogical Needs:** Students don't just need static summaries; they need interactive study aids—clickable starter questions, follow-up query rewriting, mathematical typesetting ($LaTeX$ equations), and visual proof of source pages.
+1. **Academic Rigor:** In university coursework (such as physics, mathematics, and engineering), trusting an ungrounded AI summary can lead to serious academic errors. Students need to verify the exact page, formula, or problem statement directly from their instructor's provided material.
+2. **Pedagogical Needs:** Students don't just need static summaries; they need interactive study aids—clickable starter questions, follow-up query rewriting, mathematical typesetting ($\LaTeX$ equations), and visual proof of source pages.
 3. **Closing the Trust Gap:** By pairing an editorial, print-monograph reading aesthetic with a deterministic Retrieval-Augmented Generation (RAG) architecture, **Vellum** transforms the reading and studying experience into an interactive dialogue backed by verifiable evidence.
 
 ---
 
-## 3. Visual Interface & Screenshots
-
-### Interactive Landing Experience
-The entry point of Vellum provides a paper-crafted editorial aesthetic featuring interactive 3D leaf tilt physics and typographic elegance, greeting the student before entering the workspace:
-
-![Vellum Landing Page Experience](C:/Users/Rishaan/.gemini/antigravity/brain/43b9cd10-bb62-4e4f-89ad-57dc69811c21/.user_uploaded/media_1791571862983_83385869.png)
-
----
-
-### The 3-Column Document Intelligence Workspace
-Upon entering the workspace, students are provided an organized desktop layout with distinct zones for document management, conversation, and visual evidence:
-
-![Vellum 3-Column Knowledge Workspace](C:/Users/Rishaan/.gemini/antigravity/brain/43b9cd10-bb62-4e4f-89ad-57dc69811c21/.user_uploaded/media_1791571862998_e0ae6f5d.png)
-
-- **Left (Knowledge Base):** Upload local lecture notes/PDFs with real-time state morphing (*Reading → Splitting → Indexing → Ready*), document summaries, and suggested questions.
-- **Center (Discussion):** Grounded conversational timeline with inline citation chips `[1]`, `[2]`, step-by-step problem-solving, and native $LaTeX$ rendering.
-- **Right (Evidence Panel):** Extracted snippets with highlighted key sentences and high-resolution visual PDF page rendering.
-
----
-
-## 4. Approach / Proposed Solution
+## 3. Approach / Proposed Solution
 
 Vellum implements an end-to-end, production-grade **Retrieval-Augmented Generation (RAG)** pipeline designed around strict provenance and explainability:
 
@@ -90,7 +70,7 @@ Vellum implements an end-to-end, production-grade **Retrieval-Augmented Generati
 
 ---
 
-## 5. Technologies & Tools Used
+## 4. Technologies & Tools Used
 
 | Layer / Component | Technology / Library | Purpose |
 | :--- | :--- | :--- |
@@ -101,17 +81,17 @@ Vellum implements an end-to-end, production-grade **Retrieval-Augmented Generati
 | **Vector Database** | **ChromaDB** | Persistent vector index with cosine distance calculation, metadata filtering |
 | **PDF Extraction & Rendering** | **PyMuPDF (`pymupdf` / `fitz`)** | Page-level text extraction, scanned page detection, and high-DPI page rendering |
 | **Configuration & Secrets** | **Python-Dotenv & Streamlit Secrets** | Environment variable management supporting local `.env` and Streamlit Cloud Secrets |
-| **Testing & Quality Assurance**| **PyTest** | Automated test suite comprising **43 unit and integration tests** |
+| **Testing & Quality Assurance** | **PyTest** | Automated test suite comprising **43 unit and integration tests** |
 
 ---
 
-## 6. Key Features & Functionalities
+## 5. Key Features & Functionalities
 
 1. **Editorial Academic Workspace:** A unified 3-column layout keeping document library, discussion, and source proof visible simultaneously.
 2. **State-Morphing Ingestion Telemetry:** Files dynamically transition through *Reading → Splitting → Indexing → Ready* with real-time feedback.
 3. **Automated Document Insights:** On document ingestion, the system generates a concise 2–3 line summary and 3 clickable starter study questions.
 4. **Context-Aware Query Rewriting:** Conversational follow-ups (e.g., *"Explain that formula in simpler terms"*) are rewritten into standalone search queries using past chat context.
-5. **Step-by-Step Problem Solving:** Accurately extracts problem parameters, matrices, and variables to explain step-by-step mathematical procedures with $LaTeX$ formulas.
+5. **Step-by-Step Problem Solving:** Accurately extracts problem parameters, matrices, and variables to explain step-by-step mathematical procedures with $\LaTeX$ formulas.
 6. **Scope-Filtered Retrieval:** Search across all uploaded lecture notes or isolate queries to specific selected documents.
 7. **Study Notes Export:** One-click download of the complete chat session and cited sources as formatted Markdown.
 8. **Cloud-Ready & Secure:** Seamless deployment on Streamlit Community Cloud with encrypted secrets management and automated model fallbacks.

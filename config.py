@@ -1,27 +1,36 @@
-﻿import os
+import os
 from pathlib import Path
 from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
+def _get_conf(key: str, default: str = "") -> str:
+    val = os.getenv(key)
+    if val is not None and str(val).strip():
+        return str(val).strip()
+    try:
+        import streamlit as st
+        if hasattr(st, "secrets") and key in st.secrets:
+            return str(st.secrets[key]).strip()
+    except Exception:
+        pass
+    return default
+
 class Settings:
     # Google GenAI Settings
-    GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
-    # Model ID must come from the environment; do not guess a Flash version here.
-    LLM_MODEL: str = os.getenv("LLM_MODEL", "").strip()
-    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "gemini-embedding-001")
+    GEMINI_API_KEY: str = _get_conf("GEMINI_API_KEY", "")
+    # Model ID from env or Streamlit secrets; defaults to gemini-2.5-flash if not specified
+    LLM_MODEL: str = _get_conf("LLM_MODEL", "gemini-2.5-flash")
+    EMBEDDING_MODEL: str = _get_conf("EMBEDDING_MODEL", "gemini-embedding-001")
 
     # Chunking Defaults
-    CHUNK_SIZE: int = int(os.getenv("CHUNK_SIZE", "800"))
-    CHUNK_OVERLAP: int = int(os.getenv("CHUNK_OVERLAP", "120"))
+    CHUNK_SIZE: int = int(_get_conf("CHUNK_SIZE", "800"))
+    CHUNK_OVERLAP: int = int(_get_conf("CHUNK_OVERLAP", "120"))
 
     # Retrieval Thresholds (calibrated via eval/questions.json + eval/run_eval.py).
-    # Measured on the sample corpus with gemini-embedding-001:
-    #   on-topic expected chunks score 0.738-0.932 hybrid, off-topic peaks at 0.527.
-    # 0.65 sits above the off-topic ceiling while keeping every on-topic chunk.
-    TOP_K: int = int(os.getenv("TOP_K", "5"))
-    CANDIDATE_K: int = int(os.getenv("CANDIDATE_K", "8"))
-    MIN_RELEVANCE: float = float(os.getenv("MIN_RELEVANCE", "0.65"))
+    TOP_K: int = int(_get_conf("TOP_K", "5"))
+    CANDIDATE_K: int = int(_get_conf("CANDIDATE_K", "8"))
+    MIN_RELEVANCE: float = float(_get_conf("MIN_RELEVANCE", "0.45"))
 
     # Persistence Directories
     BASE_DIR: Path = Path(__file__).resolve().parent
